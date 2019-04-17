@@ -18,7 +18,7 @@ def trigger_deeptransform(key, style_url, content_url):
     urllib.request.urlretrieve(style_url, style_image_path)
     urllib.request.urlretrieve(content_url, content_image_path)
 
-    deeptransform(style_image_path, content_image_path)
+    deeptransform(key, style_image_path, content_image_path)
 
 
 def trigger_deeptransform_notification(status, key, output_url):

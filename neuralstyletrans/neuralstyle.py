@@ -282,9 +282,12 @@ def run_style_transfer(content_path,
       
     return best_img, best_loss 
 
-def deeptransform(style_path, content_path):
+def deeptransform(key, style_path, content_path):
     best, best_loss = run_style_transfer(content_path,
             style_path, num_iterations=1000)
 
-    output_image = Image.fromarray(best)
+    output_im = Image.fromarray(best)
+    output_image = '/tmp/picasso/'+key+'.png'
+    output_im.save(output_image, "PNG")
+    print(upload_to_s3(output_image))
 
