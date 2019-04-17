@@ -11,6 +11,10 @@ flask-json = "*"
 requests = "*"
 python-decouple = "*"
 python-dotenv = "*"
+boto3 = "*"
+numpy = "*"
+pillow = "*"
+tensorflow = "*"
 
 [requires]
 python_version = "3.7"
