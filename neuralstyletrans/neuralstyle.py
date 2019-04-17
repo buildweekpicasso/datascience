@@ -244,6 +244,9 @@ def run_style_transfer(content_path,
   
     imgs = []
     for i in range(num_iterations):
+        if i % 50 == 0:
+            print(f'iteration {i}')
+        
         grads, all_loss = compute_grads(cfg)
         loss, style_score, content_score = all_loss
         opt.apply_gradients([(grads, init_image)])
@@ -287,7 +290,7 @@ def deeptransform(key, style_path, content_path):
             style_path, num_iterations=1000)
 
     output_im = Image.fromarray(best)
-    output_image = '/tmp/picasso/'+key+'.png'
+    output_image = key+'.png'
     output_im.save(output_image, "PNG")
     print(upload_to_s3(output_image))
 
