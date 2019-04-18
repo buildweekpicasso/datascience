@@ -11,8 +11,7 @@ def create_app():
     
     # Fetch environment configurations
     DEEPAI_KEY = config('DEEPAI_KEY')
-    # DEEPAI_KEY = ""
-    
+
     @app.route('/fasttransform', methods=['POST'])
     def fast_neural_style_transform():
         """
@@ -64,8 +63,7 @@ def create_app():
             content_url = data['content_url']
         except (KeyError):
             raise JsonError(description='Key Error: Key missing in the request')
-
-        # Invoke lambda student neural-style API
+        
         trigger_deeptransform(key, style_url, content_url)
 
         return json_response(request_key=key,

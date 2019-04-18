@@ -15,6 +15,7 @@ boto3 = "*"
 numpy = "*"
 pillow = "*"
 tensorflow = "*"
+celery = "*"
 
 [requires]
 python_version = "3.6.7"
