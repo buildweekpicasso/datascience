@@ -154,7 +154,7 @@ onto each variable in the HTML code in threejs_3dmodel.html
 """
 
 # Modified show.textured_mesh functiont which outputs only the necessary variables
-# The variables returned from this function will go get substituted into the js and html code
+# The variables below will get substituted into the js and html code
 background='0xffffff'
 texture_data_url = _image_url(texture, fmt='jpeg', quality=90)
 verts = array_to_jsbuffer(mesh['position'].ravel())
